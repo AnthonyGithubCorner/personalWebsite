@@ -51,6 +51,7 @@ img {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 mx-auto " id="output_div">
+                    {{ post.content }}
                     {% autoescape false %}
                     {{ post.content | markdown }}
                     {% endautoescape %}
