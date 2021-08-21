@@ -145,12 +145,8 @@ def addpost():
     subtitle = request.form['subtitle']
     author = request.form['author']
     content = request.form.get('content')
-    # split the text to get each line in a list
-    text2 = content.split('\n')
 
-    # change the text (add 'Hi' to each new line)
-    text_changed = ''.join(['<br>Hi ' + line for line in text2])
-    post = blogPost(title=title, subtitle=subtitle, author=author, content=text_changed, date_posted=datetime.now())
+    post = blogPost(title=title, subtitle=subtitle, author=author, content=content, date_posted=datetime.now())
     if check_password_hash(password_hash, password):
 
         db.session.add(post)
