@@ -50,9 +50,9 @@ img {
         <div class="container">
             <div class="row">
                 <div id="output_div">
-                    {{ post.content }}
+                    {{ post.content.encode('string_escape') }}
                     {% autoescape false %}
-                    {{ post.content | markdown }}
+                    {{ post.content.encode('string_escape') | markdown }}
                     {% endautoescape %}
                 </div>
             </div>
