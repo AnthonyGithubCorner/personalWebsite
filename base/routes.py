@@ -145,7 +145,7 @@ def addpost():
     subtitle = request.form['subtitle']
     author = request.form['author']
     content = request.form.get('content')
-    content = content.replace('\n', '\\n')
+    content = content.replace(' \n', '\\n')
 
     post = blogPost(title=title, subtitle=subtitle, author=author, content=content, date_posted=datetime.now())
     if check_password_hash(password_hash, password):
