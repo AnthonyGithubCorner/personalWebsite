@@ -47,14 +47,15 @@ img {
         </div>
     </div>
     <!-- Post Content -->
-
-                <div>
+        <div class="container">
+            <div class="row">
+                <div id="output_div">
                     {% autoescape false %}
-                    {{ post.content | replace("\n","<br>")}}
                     {{ post.content | replace("\n","<br>") | markdown }}
                     {% endautoescape %}
                 </div>
-
+            </div>
+        </div>
 
 </div>
 <hr>
