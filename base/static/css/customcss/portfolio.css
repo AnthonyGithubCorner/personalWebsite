@@ -7,6 +7,9 @@
   box-shadow: none;
 }
 
+#output_div {
+    white-space: pre-wrap;
+}
 
 .gallerycard {
     padding: 20px;
