@@ -7,13 +7,15 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from flask_mail import Mail, Message
 import os, json, boto3
-
 password_hash = generate_password_hash(Config.PASSWORD)
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 aws_session_token = os.environ.get('aws_session_token')
+
+
+
 ### Logic for Info Pages:
 
 # home
@@ -142,8 +144,13 @@ def addpost():
     title = request.form['title']
     subtitle = request.form['subtitle']
     author = request.form['author']
-    content = request.form['content']
-    post = blogPost(title=title, subtitle=subtitle, author=author, content=content, date_posted=datetime.now())
+    content = request.form.get('content')
+    # split the text to get each line in a list
+    text2 = content.split('\n')
+
+    # change the text (add 'Hi' to each new line)
+    text_changed = ''.join(['<br>Hi ' + line for line in text2])
+    post = blogPost(title=title, subtitle=subtitle, author=author, content=text_changed, date_posted=datetime.now())
     if check_password_hash(password_hash, password):
 
         db.session.add(post)
