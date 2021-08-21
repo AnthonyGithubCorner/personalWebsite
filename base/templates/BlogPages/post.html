@@ -50,8 +50,8 @@ img {
 
                 <div>
                     {% autoescape false %}
-                    {{ post.content}}
-                    {{ post.content | markdown }}
+                    {{ post.content | replace("\n","<br>")}}
+                    {{ post.content | replace("\n","<br>") | markdown }}
                     {% endautoescape %}
                 </div>
 
