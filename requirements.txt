@@ -14,4 +14,4 @@ Werkzeug==1.0.1
 psycopg2-binary==2.8.5
 Flask-Migrate==2.5.3
 boto3==1.13.16
-jinjaMarkdown == 0.0.6
+jinjaMarkdown == 0.0.7
