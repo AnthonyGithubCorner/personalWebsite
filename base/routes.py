@@ -25,7 +25,7 @@ def index():
     return render_template('InfoPages/index.html')
 
 @app.route('/CSIReference')
-def index():
+def CSIReference():
     return render_template('InfoPages/csiR.html')
 
 @app.route('/portfolio')
