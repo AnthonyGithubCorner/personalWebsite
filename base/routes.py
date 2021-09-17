@@ -26,7 +26,7 @@ def index():
 
 @app.route('/CSIReference')
 def CSIReference():
-    return render_template('InfoPages/csiR.html')
+    return redirect(url_for('static', filename='/img/r.pdf'))
 
 @app.route('/portfolio')
 def portfolio():
