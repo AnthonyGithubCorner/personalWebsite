@@ -24,6 +24,10 @@ aws_session_token = os.environ.get('aws_session_token')
 def index():
     return render_template('InfoPages/index.html')
 
+@app.route('/CSIReference')
+def index():
+    return render_template('InfoPages/csiR.html')
+
 @app.route('/portfolio')
 def portfolio():
     return render_template('InfoPages/portfolio.html')
