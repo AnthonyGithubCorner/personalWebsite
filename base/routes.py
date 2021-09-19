@@ -28,6 +28,10 @@ def index():
 def CSIReference():
     return redirect(url_for('static', filename='/img/r.pdf'))
 
+@app.route('/PhysicsEE')
+def PhysicsEE():
+    return redirect(url_for('static', filename='/img/PhysicsEE.pdf'))
+
 @app.route('/portfolio')
 def portfolio():
     return render_template('InfoPages/portfolio.html')
