@@ -32,6 +32,10 @@ def CSIReference():
 def PhysicsEE():
     return redirect(url_for('static', filename='/img/PhysicsEE.pdf'))
 
+@app.route('/PhysicsIA')
+def PhysicsIA():
+    return redirect(url_for('static', filename='/img/physicsIA.pdf'))
+
 @app.route('/portfolio')
 def portfolio():
     return render_template('InfoPages/portfolio.html')
